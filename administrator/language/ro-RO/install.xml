@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="2.5" client="administrator" type="language" method="upgrade">
+	<name>Romanian (ro-RO)</name>
+    <tag>ro-RO</tag>
+    <version>2.5.5.2</version>
+    <creationDate>2012-12-20</creationDate>
+    <author>Joomla! Romania</author>
+    <authorEmail>traducere@joomla.ro</authorEmail>
+    <authorUrl>www.joomla.ro</authorUrl>
+    <copyright>Copyright (C) 2005 - 2012 Open Source Matters &amp;  Joomla.ro. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <description>Romanian language pack for Joomla! 2.5</description>
+	<files>
+        <filename>index.html</filename>
+        <filename file="meta">install.xml</filename>
+        <filename file="meta">ro-RO.xml</filename>
+        <filename>ro-RO.com_joomlaupdate.ini</filename>
+        <filename>ro-RO.lib_joomla.ini</filename>
+        <filename>ro-RO.plg_captcha_recaptcha.ini</filename>
+        <filename>ro-RO.plg_content_pagebreak.ini</filename>
+        <filename>ro-RO.plg_content_vote.ini</filename>
+        <filename>ro-RO.plg_editors-xtd_article.ini</filename>
+        <filename>ro-RO.plg_editors-xtd_image.ini</filename>
+        <filename>ro-RO.plg_editors-xtd_pagebreak.ini</filename>
+        <filename>ro-RO.plg_editors-xtd_readmore.ini</filename>
+        <filename>ro-RO.plg_finder_categories.ini</filename>
+        <filename>ro-RO.plg_finder_contacts.ini</filename>
+        <filename>ro-RO.plg_finder_content.ini</filename>
+        <filename>ro-RO.plg_finder_newsfeeds.ini</filename>
+        <filename>ro-RO.plg_finder_weblinks.ini</filename>
+        <filename>ro-RO.plg_quickicon_extensionupdate.ini</filename>
+        <filename>ro-RO.plg_quickicon_joomlaupdate.ini</filename>
+        <filename>ro-RO.plg_search_categories.ini</filename>
+        <filename>ro-RO.plg_search_contacts.ini</filename>
+        <filename>ro-RO.plg_search_content.ini</filename>
+        <filename>ro-RO.plg_search_newsfeeds.ini</filename>
+        <filename>ro-RO.plg_search_weblinks.ini</filename>
+        <filename>ro-RO.plg_user_profile.ini</filename>     
+	</files>
+</install>

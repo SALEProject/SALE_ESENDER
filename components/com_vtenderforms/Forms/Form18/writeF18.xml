@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/TED_schema/Reception/R2.0.8.S02/TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2013-031111</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <CONTRACT_AWARD_DEFENCE CATEGORY="ORIGINAL" FORM="18" LG="EN" VERSION="R2.0.8.S02">
+      <FD_CONTRACT_AWARD_DEFENCE CTYPE="SUPPLIES">
+        <CONTRACTING_AUTHORITY_INFORMATION_CONTRACT_AWARD_DEFENCE>
+          <NAME_ADDRESSES_CONTACT_CONTRACT_AWARD>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>MEDDO SA</OFFICIALNAME>
+                <NATIONALID>242183725</NATIONALID>
+              </ORGANISATION>
+              <ADDRESS>Henri Coanda 41125, Vaslui, Satu Mare, Romania</ADDRESS>
+              <TOWN>Vaslui</TOWN>
+              <POSTAL_CODE>74321</POSTAL_CODE>
+              <COUNTRY VALUE="TZ"/>
+              <ATTENTION>Radu Balint</ATTENTION>
+              <PHONE>+40 752785620</PHONE>
+              <E_MAILS>
+                <E_MAIL>radu@meddo.ro</E_MAIL>
+              </E_MAILS>
+              <FAX>+40 32389603</FAX>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+            <INTERNET_ADDRESSES_CONTRACT_AWARD>
+              <URL_GENERAL>www.meddo.ro</URL_GENERAL>
+              <URL_BUYER>www.meddo.net</URL_BUYER>
+              <URL_INFORMATION>www.meddo.net</URL_INFORMATION>
+              <URL_PARTICIPATE>www.meddo.ro</URL_PARTICIPATE>
+            </INTERNET_ADDRESSES_CONTRACT_AWARD>
+          </NAME_ADDRESSES_CONTACT_CONTRACT_AWARD>
+          <TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+            <ACTIVITIES_OF_CONTRACTING_ENTITY>
+              <ACTIVITY_OF_CONTRACTING_ENTITY VALUE="PORT_RELATED_ACTIVITIES"/>
+            </ACTIVITIES_OF_CONTRACTING_ENTITY>
+            <PURCHASING_ON_BEHALF>
+              <PURCHASING_ON_BEHALF_NO></PURCHASING_ON_BEHALF_NO>
+            </PURCHASING_ON_BEHALF>
+          </TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+        </CONTRACTING_AUTHORITY_INFORMATION_CONTRACT_AWARD_DEFENCE>
+        <OBJECT_CONTRACT_INFORMATION_CONTRACT_AWARD_NOTICE_DEFENCE>
+          <DESCRIPTION_AWARD_NOTICE_INFORMATION_DEFENCE>
+            <TITLE_CONTRACT>Reinforcing the networking of FP7 National Contact Points (NCP) and third country contacts in the Euratom Fission programme</TITLE_CONTRACT>
+            <TYPE_CONTRACT_W_PUB_DEFENCE>
+              <TYPE_CONTRACT VALUE="SUPPLIES"/>
+            </TYPE_CONTRACT_W_PUB_DEFENCE>
+            <LOCATION_NUTS>
+              <LOCATION>Vaslui</LOCATION>
+              <NUTS CODE="RO216"/>
+            </LOCATION_NUTS>
+            <NOTICE_INVOLVES_DESC_DEFENCE VALUE="CONCLUSION_FRAMEWORK_AGREEMENT"/>
+            <SHORT_CONTRACT_DESCRIPTION>Research and technology development in the area of nuclear fission and radiation protection under the Euratom programme is booming. However, there is a clear need for better coordination of research activities at a European and global level in order to further stimulate innovation and improve the EUs competitiveness worldwide. Hence, a well-organised and proficient network of National Contact Points for the Euratom programme is essential to improve this coordination.</SHORT_CONTRACT_DESCRIPTION>
+            <CPV>
+              <CPV_MAIN>
+                <CPV_CODE CODE="39722000"/>
+                <CPV_SUPPLEMENTARY_CODE CODE="CA32"/>
+              </CPV_MAIN>
+              <CPV_ADDITIONAL>
+                <CPV_CODE CODE="44619300"/>
+                <CPV_SUPPLEMENTARY_CODE CODE="LA50"/>
+              </CPV_ADDITIONAL>
+            </CPV>
+          </DESCRIPTION_AWARD_NOTICE_INFORMATION_DEFENCE>
+        </OBJECT_CONTRACT_INFORMATION_CONTRACT_AWARD_NOTICE_DEFENCE>
+        <PROCEDURE_DEFINITION_CONTRACT_AWARD_NOTICE_DEFENCE>
+          <AWARD_CRITERIA_CONTRACT_AWARD_NOTICE_INFORMATION_DEFENCE>
+            <AWARD_CRITERIA_DETAIL_F18>
+              <LOWEST_PRICE></LOWEST_PRICE>
+            </AWARD_CRITERIA_DETAIL_F18>
+            <F18_IS_ELECTRONIC_AUCTION_USABLE VALUE="NO"/>
+          </AWARD_CRITERIA_CONTRACT_AWARD_NOTICE_INFORMATION_DEFENCE>
+          <ADMINISTRATIVE_INFORMATION_CONTRACT_AWARD_DEFENCE>
+            <FILE_REFERENCE_NUMBER>2013/32456</FILE_REFERENCE_NUMBER>
+          </ADMINISTRATIVE_INFORMATION_CONTRACT_AWARD_DEFENCE>
+        </PROCEDURE_DEFINITION_CONTRACT_AWARD_NOTICE_DEFENCE>
+        <AWARD_OF_CONTRACT_DEFENCE>
+          <OFFERS_RECEIVED_NUMBER>5</OFFERS_RECEIVED_NUMBER>
+          <OFFERS_RECEIVED_NUMBER_MEANING>1</OFFERS_RECEIVED_NUMBER_MEANING>
+        </AWARD_OF_CONTRACT_DEFENCE>
+        <COMPLEMENTARY_INFORMATION_CONTRACT_AWARD>
+          <RELATES_TO_EU_PROJECT_NO></RELATES_TO_EU_PROJECT_NO>
+          <ADDITIONAL_INFORMATION>Project NUCL-EU is a 3-year project and has the overall objective to create an efficient, pro-active and sustainable network for stimulating closer cooperation among all the National Contact Points and Third Countries contacts for the Euratom Programme. NUCL-EU has two clear specific objectives: the reinforcement of the Euratom NCP network and the enhancement of Third Countries participation. Principal activities include good practice benchmarking with Euratom NCPs, followed by tailor-made training sessions and twinning schemes for new and less experienced NCPs.</ADDITIONAL_INFORMATION>
+          <PROCEDURES_FOR_APPEAL>
+            <LODGING_OF_APPEALS>
+              <LODGING_OF_APPEALS_PRECISION>Third Countries contacts will be encouraged to participate in all NUCL-EU activities. Participation of research organisations especially from Third Countries in Euratom will be boosted through a large Brokerage Event. The expected impacts of NUCL-EU will be 1) a strong and uniform Euratom NCP network, involving sound communication with Third Countries, and 2) more effective participation of Third Countries to the Euratom programme. Moreover, good practices of this network will be publicly available as a handbook for NCPs in other FP7 themes. The coordinator (APRE) will invite all Euratom NCPs, including those outside the consortium, to the project activities. The currently only Third Country NCP (South Africa) is part of project consortium.</LODGING_OF_APPEALS_PRECISION>
+            </LODGING_OF_APPEALS>
+          </PROCEDURES_FOR_APPEAL>
+          <NOTICE_DISPATCH_DATE>
+            <DAY>11</DAY>
+            <MONTH>03</MONTH>
+            <YEAR>2013</YEAR>
+          </NOTICE_DISPATCH_DATE>
+        </COMPLEMENTARY_INFORMATION_CONTRACT_AWARD>
+      </FD_CONTRACT_AWARD_DEFENCE>
+    </CONTRACT_AWARD_DEFENCE>
+  </FORM_SECTION>
+</TED_ESENDERS>

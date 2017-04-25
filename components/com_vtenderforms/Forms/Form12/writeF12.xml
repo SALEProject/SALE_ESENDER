@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://publications.europa.eu/TED_schema/Reception" xsi:noNamespaceSchemaLocation="TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2013-051420</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <DESIGN_CONTEST CATEGORY="ORIGINAL" FORM="12" LG="RO" VERSION="R2.0.8.S02">
+      <FD_DESIGN_CONTEST>
+        <NOTICE_COVERED VALUE="DIRECTIVE_2004_17"/>
+        <AUTHORITY_ENTITY_DESIGN_CONTEST>
+          <NAME_ADDRESSES_CONTACT_DESIGN_CONTEST>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>SC Carpatica SRL</OFFICIALNAME>
+              </ORGANISATION>
+              <ADDRESS>Strada Cimpoi, Nr. 23</ADDRESS>
+              <TOWN>Bucuresti</TOWN>
+              <COUNTRY VALUE="RO"/>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+          </NAME_ADDRESSES_CONTACT_DESIGN_CONTEST>
+        </AUTHORITY_ENTITY_DESIGN_CONTEST>
+        <OBJECT_DESIGN_CONTEST>
+          <SHORT_DESCRIPTION_CONTRACT>Constructia de sali de sport pentru scolile gimnaziale</SHORT_DESCRIPTION_CONTRACT>
+          <CPV>
+            <CPV_MAIN>
+              <CPV_CODE CODE="16150000"/>
+            </CPV_MAIN>
+          </CPV>
+        </OBJECT_DESIGN_CONTEST>
+        <LEFTI_DESIGN_CONTEST>
+          <CRITERIA_SELECTION_PARTICIPANTS>Experienta minim 15 ani.</CRITERIA_SELECTION_PARTICIPANTS>
+        </LEFTI_DESIGN_CONTEST>
+        <PROCEDURES_DESIGN_CONTEST>
+          <ADMINISTRATIVE_INFORMATION_DESIGN_CONTEST_NOTICE>
+            <TIME_LIMIT_CHP>
+              <DAY>30</DAY>
+              <MONTH>5</MONTH>
+              <YEAR>2013</YEAR>
+            </TIME_LIMIT_CHP>
+          </ADMINISTRATIVE_INFORMATION_DESIGN_CONTEST_NOTICE>
+        </PROCEDURES_DESIGN_CONTEST>
+        <COMPLEMENTARY_INFORMATION_DESIGN_CONTEST>
+          <NOTICE_DISPATCH_DATE>
+            <DAY>14</DAY>
+            <MONTH>5</MONTH>
+            <YEAR>2013</YEAR>
+          </NOTICE_DISPATCH_DATE>
+        </COMPLEMENTARY_INFORMATION_DESIGN_CONTEST>
+      </FD_DESIGN_CONTEST>
+    </DESIGN_CONTEST>
+  </FORM_SECTION>
+</TED_ESENDERS>

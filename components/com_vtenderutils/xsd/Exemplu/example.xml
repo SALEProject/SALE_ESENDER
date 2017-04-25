@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/TED_schema/Reception" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2013-000088</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <DESIGN_CONTEST CATEGORY="ORIGINAL" FORM="12" LG="EN" VERSION="R2.0.8.S02">
+      <FD_DESIGN_CONTEST>
+        <NOTICE_COVERED VALUE="DIRECTIVE_2004_18"/>
+        <AUTHORITY_ENTITY_DESIGN_CONTEST>
+          <NAME_ADDRESSES_CONTACT_DESIGN_CONTEST>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>SC. DANSON SRL.</OFFICIALNAME>
+                <NATIONALID>237037270</NATIONALID>
+              </ORGANISATION>
+              <ADDRESS>Str. Iarmaroc 38, Fetesti 3286387 Giurgiu</ADDRESS>
+              <TOWN>Fetesti</TOWN>
+              <POSTAL_CODE>77896</POSTAL_CODE>
+              <COUNTRY VALUE="AI"/>
+              <ATTENTION>Edgar Veres</ATTENTION>
+              <PHONE>+40 738691504</PHONE>
+              <E_MAILS>
+                <E_MAIL>edgar@danson.ro</E_MAIL>
+              </E_MAILS>
+              <FAX>+40 32402097</FAX>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+            <INTERNET_ADDRESSES_DESIGN_CONTEST>
+              <URL_GENERAL>www.danson.ro</URL_GENERAL>
+              <URL_BUYER>www.danson.biz</URL_BUYER>
+            </INTERNET_ADDRESSES_DESIGN_CONTEST>
+            <FURTHER_INFORMATION>
+              <IDEM/>
+            </FURTHER_INFORMATION>
+          </NAME_ADDRESSES_CONTACT_DESIGN_CONTEST>
+          <TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+            <ACTIVITIES_OF_CONTRACTING_ENTITY>
+              <ACTIVITY_OF_CONTRACTING_ENTITY VALUE="PORT_RELATED_ACTIVITIES"/>
+            </ACTIVITIES_OF_CONTRACTING_ENTITY>
+            <PURCHASING_ON_BEHALF>
+              <PURCHASING_ON_BEHALF_NO/>
+            </PURCHASING_ON_BEHALF>
+          </TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+        </AUTHORITY_ENTITY_DESIGN_CONTEST>
+        <OBJECT_DESIGN_CONTEST>
+          <TITLE_DESIGN_CONTACT_NOTICE>NUCL-EU - Reinforcing the networking of FP7 National Contact Points (NCP) and third country contacts in the Euratom Fission programme</TITLE_DESIGN_CONTACT_NOTICE>
+          <SHORT_DESCRIPTION_CONTRACT>Research and technology development in the area of nuclear fission and radiation protection under the Euratom programme is booming.</SHORT_DESCRIPTION_CONTRACT>
+          <CPV>
+            <CPV_MAIN>
+              <CPV_CODE CODE="39541110"/>
+              <CPV_SUPPLEMENTARY_CODE CODE="CA66"/>
+            </CPV_MAIN>
+            <CPV_ADDITIONAL>
+              <CPV_CODE CODE="70332200"/>
+              <CPV_SUPPLEMENTARY_CODE CODE="FD02"/>
+            </CPV_ADDITIONAL>
+          </CPV>
+        </OBJECT_DESIGN_CONTEST>
+        <LEFTI_DESIGN_CONTEST>
+          <NO_PARTICIPATION_RESERVED_PROFESSION/>
+        </LEFTI_DESIGN_CONTEST>
+        <PROCEDURES_DESIGN_CONTEST>
+		  <CONTEST_TYPE><RESTRICTED_CONTEST/></CONTEST_TYPE>
+          <PARTICIPANTS_NAMES>
+            <PARTICIPANTS_NAME>
+			  
+              <NAME>SC MEGA365 SRL</NAME>
+            </PARTICIPANTS_NAME>
+          </PARTICIPANTS_NAMES>
+          <ADMINISTRATIVE_INFORMATION_DESIGN_CONTEST_NOTICE>
+            <REFERENCE_NUMBER_ATTRIBUTED>2013/22356</REFERENCE_NUMBER_ATTRIBUTED>
+            <TIME_LIMIT_CHP>
+              <DAY>04</DAY>
+              <MONTH>01</MONTH>
+              <YEAR>2014</YEAR>
+            </TIME_LIMIT_CHP>
+          </ADMINISTRATIVE_INFORMATION_DESIGN_CONTEST_NOTICE>
+        </PROCEDURES_DESIGN_CONTEST>
+        <COMPLEMENTARY_INFORMATION_DESIGN_CONTEST>
+          <RELATES_TO_EU_PROJECT_NO/>
+		  <NOTICE_DISPATCH_DATE>
+			<DAY>11</DAY>
+			<MONTH>03</MONTH>
+			<YEAR>2013</YEAR>
+		  </NOTICE_DISPATCH_DATE>			
+        </COMPLEMENTARY_INFORMATION_DESIGN_CONTEST>
+      </FD_DESIGN_CONTEST>
+    </DESIGN_CONTEST>
+  </FORM_SECTION>
+</TED_ESENDERS>

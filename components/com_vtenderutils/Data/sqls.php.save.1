@@ -1,0 +1,798 @@
+<?php
+	$platformSQLS =  array(
+		"GENERAL"=>array(
+			"0"=>array(
+				"ID"	 => "sql_LastTableID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT `ID` FROM `@prm_TABLE` ORDER BY `ID` DESC LIMIT 1"
+			)
+		),
+
+		"XPATHS"=>array(
+			"0"=>array(
+				"ID"	 => "select_XPATHByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `xpaths` WHERE `ID` = '@prm_ID'"
+			),
+			"1"=>array(
+				"ID"	 => "insert_XPATH",
+				"SQLType"=> "2",
+				"SQL"	 => "INSERT INTO `xpaths` (`XPATH`) VALUES ('@prm_PATH')"
+			),
+			"2"=>array(
+				"ID"	 => "update_XPATHByID",
+				"SQLType"=> "3",
+				"SQL"	 => "UPDATE `xpaths` SET `XPATH` = '@prm_PATH' WHERE `ID` = '@prm_ID'"
+			),
+			"3"=>array(
+				"ID"	 => "delete_XPATHByID",
+				"SQLType"=> "4",
+				"SQL"	 => "DELETE FROM `xpaths` WHERE `ID` = '@prm_ID'"
+			)
+		),
+
+		"FIELDS"=>array(
+			"0"=>array(
+				"ID"	 => "select_FieldXPATHByCode",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT x.`XPATH`
+							 FROM `forms` f
+							 LEFT JOIN `sections` s ON (f.`ID` = s.`ID_FORM`)
+							 LEFT JOIN `fields` fi ON (s.`ID` = fi.`ID_SECTION`)
+							 LEFT JOIN `xpaths` x on (fi.`ID` = x.`ID_FIELD`)
+							 WHERE (f.`CODE` = '@prm_FORM_CODE') AND (fi.`CODE`= '@prm_FIELD_CODE')"
+			),
+			"1"=>array(
+				"ID"	 => "select_SimpleSelectOptionsByFieldID",
+				"SQLType"=> "1",
+				/*"SQL"	 => "SELECT lists_values.`CODE` AS `TEXT_OPTION` FROM `fields`
+							 LEFT JOIN `field_range` ON (fields.`ID_FIELD_RANGEXSD` = field_range.`ID`)
+							 LEFT JOIN `lists` ON (field_range.`ID_LIST` = lists.`ID`)
+							 LEFT JOIN `lists_values` ON (lists.`ID` = lists_values.`ID_LIST`)
+							 WHERE fields.`ID` = '@prm_ID'"*/
+				/*"SQL"	 => "SELECT CASE lists.`NAME`
+										WHEN 'COUNTRY' THEN
+											CONCAT(lists_values.`NAME`, ' (', lists_values.`CODE`, ')')
+										ELSE
+											lists_values.`CODE`
+										END AS `TEXT_OPTION`,
+									CASE lists_values.`ALIAS`
+										WHEN '' THEN
+											lists_values.`CODE`
+										ELSE
+											lists_values.`ALIAS`
+										END AS `VALUE_OPTION`
+							FROM `fields`
+							LEFT JOIN `field_range` ON (fields.`ID_FIELD_RANGEXSD` = field_range.`ID`)
+							LEFT JOIN `lists` ON (field_range.`ID_LIST` = lists.`ID`)
+							LEFT JOIN `lists_values` ON (lists.`ID` = lists_values.`ID_LIST`)
+							WHERE fields.`ID` = '@prm_ID'
+							ORDER BY `TEXT_OPTION` ASC"				*/
+
+				"SQL"	 => "SELECT CASE lists.`NAME`
+										WHEN 'COUNTRY' THEN
+											CONCAT(lists_values.`@prm_LANG`, ' (', lists_values.`CODE`, ')')
+										ELSE
+											lists_values.`@prm_LANG`
+										END AS `TEXT_OPTION`,
+									CASE lists_values.`ALIAS`
+										WHEN '' THEN
+											lists_values.`CODE`
+										ELSE
+											lists_values.`ALIAS`
+										END AS `VALUE_OPTION`
+							FROM `fields`
+							LEFT JOIN `field_range` ON (fields.`ID_FIELD_RANGEXSD` = field_range.`ID`)
+							LEFT JOIN `lists` ON (field_range.`ID_LIST` = lists.`ID`)
+							LEFT JOIN `lists_values` ON (lists.`ID` = lists_values.`ID_LIST`)
+							WHERE fields.`ID` = '@prm_ID'
+							ORDER BY `TEXT_OPTION` ASC"
+			),
+			"2"=>array(
+				"ID"	 => "select_SpecialSelectOptionsByFieldID",
+				"SQLType"=> "1",
+				/*"SQL"	 => "SELECT lv.code AS `TEXT_OPTION`,
+							case slt.code
+								 when 'S1'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												concat(fo.name,'#',ff.code,'#',ff.name)
+											when 'SHOW/HIDE'
+											  then
+											   ''
+
+									end
+								 )
+								 when 'S2'
+								 then
+								 (
+									 case ff.option_type
+										when  'OPTION'
+											  then
+
+												concat(fo.name,'#',ff.code,'#',ff.name)
+									end
+								 )
+								 when 'S3'
+								 then
+								 (
+									 ff.name
+								 )
+								 when 'S4'
+								 then
+								 (
+									 '#'
+								 )
+								 when 'S5'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												concat(fo.name,'#',ff.code,'#',ff.name)
+											when 'SHOW/HIDE'
+											  then
+											   ''
+
+									end
+								 )
+
+
+								 end  as ID_OPTION,
+
+								 case slt.code
+								 when 'S1'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												 '#'
+											when 'SHOW/HIDE'
+											  then
+											    concat(ff.target_id)
+
+									end
+								 )
+								 when 'S2'
+								 then
+								 (
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												'#'
+									end
+								 )
+								 when 'S3'
+								 then
+								 (
+									 ff.name
+								 )
+								 when 'S4'
+								 then
+								 (
+									 concat(ff.target_id)
+								 )
+								when 'S5'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												 '##'
+										when 'SHOW/HIDE'
+											  then
+											    concat(ff.target_id)
+
+									end
+								 )
+
+								 end  as VALUE_OPTION
+							FROM
+							`fields` f
+								LEFT JOIN `field_range` ON (f.`ID_FIELD_RANGEXSD` = field_range.`ID`)
+								LEFT JOIN `lists` ON (field_range.`ID_LIST` = lists.`ID`)
+								LEFT JOIN `lists_values` lv ON (lists.`ID` = lv.`ID_LIST`)
+								left join fields ff on ff.LIST_OPTION_CODE = lv.LIST_OPTION_CODE and ff.`ID_SECTION` = f.`ID_SECTION` and
+								ff.`field_parent` = f.`code`
+									left join select_type slt on slt.id = f.id_select_type
+									inner join sections s on s.id = f.id_section
+									inner join forms fo on fo.id = s.id_form
+							WHERE
+								f.`ID` = '@prm_ID'
+
+							"				*/
+					"SQL"	 => "SELECT lv.`@prm_LANG` AS `TEXT_OPTION`,
+							case slt.code
+								 when 'S1'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												concat(fo.name,'#',ff.code,'#',ff.name)
+											when 'SHOW/HIDE'
+											  then
+											   ''
+
+									end
+								 )
+								 when 'S2'
+								 then
+								 (
+									 case ff.option_type
+										when  'OPTION'
+											  then
+
+												concat(fo.name,'#',ff.code,'#',ff.name)
+									end
+								 )
+								 when 'S3'
+								 then
+								 (
+									 ff.name
+								 )
+								 when 'S4'
+								 then
+								 (
+									 '#'
+								 )
+								 when 'S5'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												concat(fo.name,'#',ff.code,'#',ff.name)
+											when 'SHOW/HIDE'
+											  then
+											   ''
+
+									end
+								 )
+
+
+								 end  as ID_OPTION,
+
+								 case slt.code
+								 when 'S1'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												 '#'
+											when 'SHOW/HIDE'
+											  then
+											    concat(ff.target_id)
+
+									end
+								 )
+								 when 'S2'
+								 then
+								 (
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												'#'
+									end
+								 )
+								 when 'S3'
+								 then
+								 (
+									 ff.name
+								 )
+								 when 'S4'
+								 then
+								 (
+									 concat(ff.target_id)
+								 )
+								when 'S5'
+								 then
+								(
+									 case ff.option_type
+										when  'OPTION'
+											  then
+												 '##'
+										when 'SHOW/HIDE'
+											  then
+											    concat(ff.target_id)
+
+									end
+								 )
+
+								 end  as VALUE_OPTION
+							FROM
+							`fields` f
+								LEFT JOIN `field_range` ON (f.`ID_FIELD_RANGEXSD` = field_range.`ID`)
+								LEFT JOIN `lists` ON (field_range.`ID_LIST` = lists.`ID`)
+								LEFT JOIN `lists_values` lv ON (lists.`ID` = lv.`ID_LIST`)
+								left join fields ff on ff.LIST_OPTION_CODE = lv.LIST_OPTION_CODE and ff.`ID_SECTION` = f.`ID_SECTION` and
+								ff.`field_parent` = f.`code`
+									left join select_type slt on slt.id = f.id_select_type
+									inner join sections s on s.id = f.id_section
+									inner join forms fo on fo.id = s.id_form
+							WHERE
+								f.`ID` = '@prm_ID'
+
+							"
+
+			),
+			"3"=>array(
+				"ID"	 => "select_FieldCodeByFieldDescription",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT `CODE` FROM `fields` WHERE fields.`DESCRIPTION`= '@prm_DESCRIPTION'"
+			),
+			"4"=>array(
+				"ID"	 => "select_FieldsBySectionID",
+				"SQLType"=> "1",
+				//"SQL"	 => "SELECT fields.`ID` AS `FIELD_ID` FROM `sections` LEFT JOIN `fields` ON (sections.`ID` = fields.`ID_SECTION`) WHERE sections.`ID` = '@prm_ID'"
+				/*"SQL"	 => "SELECT fields.`ID` as `FIELD_ID`, fields.`CODE` as `FIELD_CODE`, fields.`DESCRIPTION` as `FIELD_DESCRIPTION`, labels.`LANG_RO` as `FIELD_LABEL`, field_type.`NAME` as `FIELD_TYPE`, field_mask.`NAME`  as `FIELD_MASK`, select_type.`CODE` AS `SELECT_TYPE`
+							 FROM `sections`
+							 LEFT JOIN `fields` ON (sections.`ID` = fields.`ID_SECTION`)
+							 LEFT JOIN `labels` ON (fields.`LABEL_CODE` = labels.`LABEL`)
+							 LEFT JOIN `field_type` ON (fields.`ID_FIELD_TYPE` = field_type.`ID`)
+							 LEFT JOIN `field_mask` ON (fields.`ID_FIELD_MASK` = field_mask.`ID`)
+							 LEFT JOIN `select_type` ON (fields.`ID_SELECT_TYPE` = select_type.`ID`)
+							 WHERE sections.`ID` = '@prm_ID'"*/
+				"SQL"	=>	"SELECT
+								f.`ID` as `FIELD_ID`,
+								f.`CODE` as `FIELD_CODE`,
+								f.`DESCRIPTION` as `FIELD_DESCRIPTION`,
+								f.`MINIMUM_INFO` as `FIELD_MINIMUM`,
+								l.`@prm_LANG` as `FIELD_LABEL`,
+								ft.`NAME` as `FIELD_TYPE`,
+								fm.`NAME`  as `FIELD_MASK`,
+								st.`CODE` AS `SELECT_TYPE`
+							FROM
+								`sections` s
+								 LEFT JOIN `fields` f ON (s.`ID` = f.`ID_SECTION`)
+								 LEFT JOIN `labels` l ON (f.`LABEL_CODE` = l.`LABEL`)
+								 LEFT JOIN `field_type` ft ON (f.`ID_FIELD_TYPE` = ft.`ID`)
+								 LEFT JOIN `field_mask` fm ON (f.`ID_FIELD_MASK` = fm.`ID`)
+								 LEFT JOIN `select_type` st ON (f.`ID_SELECT_TYPE` = st.`ID`)
+							WHERE
+								s.`ID` = '@prm_ID' and ft.`Name`!='' and ft.`Name`!= 'DISCLAIMER' /*and fm.`NAME` != 'HIDDEN'*/ and ((fm.`NAME`!= 'HIDDEN') OR (fm.`NAME` IS NULL))
+							group by
+								f.`CODE`
+							order by
+								`FIELD_ID`
+							 "
+			),
+			"5"=>array(
+				"ID"	 => "select_FieldChilds",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT fi.`CODE`, fi.`DESCRIPTION`
+							 FROM `forms` f
+							 LEFT JOIN `sections` s on f.`ID` = s.`ID_FORM`
+							 LEFT JOIN `fields` fi on s.`ID` = fi.`ID_SECTION`
+							 WHERE f.`CODE` = '@prm_FORM_CODE' AND fi.`FIELD_PARENT` = '@prm_FIELD_PARENT'"
+			),
+
+			"6"=>array(
+				"ID"	 => "select_FieldInfoByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT fm.`CODE` AS `MASK`
+							 FROM `fields` fi
+							 LEFT JOIN `field_mask` fm ON fi.`ID_FIELD_MASK` = fm.`ID`
+							 WHERE fi.`ID` = '@prm_ID'"
+			),
+
+			"7"=>array(
+				"ID"	 => "select_FieldInfosByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT *
+							 FROM `fields` fi
+							 WHERE fi.`ID` = '@prm_ID'"
+			),
+
+			"8"=>array(
+				"ID"	 => "select_cpvtype",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT fr.`CODE`
+							 FROM `fields` f
+							 LEFT JOIN `field_range` fr on (f.`ID_FIELD_RANGEXSD` = fr.`ID`)
+							 WHERE f.`ID` =  '@prm_ID'"
+			),
+
+			"9"=>array(
+				"ID"	 => "select_SectionDisclaimers",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT DISTINCT(l.`@prm_LANG`) AS `TEXT`
+							FROM `sections` s
+							LEFT JOIN `fields` f ON (s.`ID` = f.`ID_SECTION`)
+							LEFT JOIN `field_type` ft ON (f.`ID_FIELD_TYPE` = ft.`ID`)
+							LEFT JOIN `labels` l ON (f.`LABEL_CODE` = l.`LABEL`)
+							WHERE (s.`ID` = '@prm_ID') AND (ft.`NAME` = 'DISCLAIMER')
+							GROUP BY l.`@prm_LANG`
+							ORDER BY f.`ID`
+							"
+			),
+
+			"10"=>array(
+				"ID"	 => "select_HiddenFieldsBySectionID",
+				"SQLType"=> "1",
+				"SQL"	=>	"SELECT
+								f.`ID` as `FIELD_ID`,
+								f.`CODE` as `FIELD_CODE`,
+								f.`DESCRIPTION` as `FIELD_DESCRIPTION`,
+								f.`MINIMUM_INFO` as `FIELD_MINIMUM`,
+								l.`@prm_LANG` as `FIELD_LABEL`,
+								ft.`NAME` as `FIELD_TYPE`,
+								fm.`NAME`  as `FIELD_MASK`,
+								st.`CODE` AS `SELECT_TYPE`
+							FROM
+								`sections` s
+								 LEFT JOIN `fields` f ON (s.`ID` = f.`ID_SECTION`)
+								 LEFT JOIN `labels` l ON (f.`LABEL_CODE` = l.`LABEL`)
+								 LEFT JOIN `field_type` ft ON (f.`ID_FIELD_TYPE` = ft.`ID`)
+								 LEFT JOIN `field_mask` fm ON (f.`ID_FIELD_MASK` = fm.`ID`)
+								 LEFT JOIN `select_type` st ON (f.`ID_SELECT_TYPE` = st.`ID`)
+							WHERE
+								s.`ID` = '@prm_ID' and ft.`Name`!='' and ft.`Name`!= 'DISCLAIMER' and fm.`NAME` = 'HIDDEN'
+							group by
+								f.`CODE`
+							order by
+								`FIELD_ID`
+							 "
+			),
+
+		),
+
+		"SPECIALNODES"=>array(
+			"0"=>array(
+				"ID"	 => "select_SpecialNodeByName",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM special_nodes WHERE special_nodes.`NAME`= '@prm_NAME'"
+			)
+		),
+
+		"FORMS"=>array(
+			"0"=>array(
+				"ID"	 => "select_FormByName",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `forms` WHERE forms.`NAME` = '@prm_Name'"
+			),
+			"1"=>array(
+				"ID"	 => "select_FormSectionsByFormID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT sections.`ID` AS `SECTION_ID`, sections.`NAME` as `SECTION_NAME`, sections.`ID_PARENT` as `SECTION_PARENT`, sections.`CODE` as `SECTION_CODE`, sections.`IS_VISIBLE` as `SECTION_VISIBILITY`,
+							l.`@prm_LANG` AS `SECTION_LABEL`
+							FROM `forms`
+							LEFT JOIN `sections` ON (forms.`ID` = sections.`ID_FORM`)
+							LEFT JOIN `labels` l ON (sections.`LABEL` = l.`LABEL`)
+							WHERE forms.`ID` = '@prm_ID'"
+			),
+			"2"=>array(
+				"ID"	 => "select_formname",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT `@prm_Lang`
+							 FROM `form_names`
+							 WHERE `CODE` = '@prm_Code'"
+			)
+		),
+
+		"LISTS"=>array(
+			"0"=>array(
+				"ID"	 => "select_cpv",
+				"SQLType"=> "1",
+				/*"SQL"	 => "SELECT lv.`CODE`, lv.`CONTENT_RO`, lv.`CONTENT_EN`
+							FROM `lists` l
+							LEFT JOIN `lists_values` lv ON (l.`ID` = lv.`ID_LIST`)
+							WHERE l.`NAME` = '@prm_CPVType'
+							ORDER BY lv.`CODE` ASC
+							LIMIT 0, @prm_Offset
+							"*/
+				/*"SQL"	 => "SELECT lv.`CODE`, lv.`CONTENT_RO`, lv.`CONTENT_EN`
+							FROM `lists` l
+							LEFT JOIN `lists_values` lv ON (l.`ID` = lv.`ID_LIST`)
+							WHERE (l.`NAME` = '@prm_CPVType') AND (lv.`CODE` LIKE '%@prm_CODE%' @prm_COND_RO lv.`CONTENT_RO` LIKE '%@prm_RO%' @prm_COND_EN lv.`CONTENT_EN` LIKE '%@prm_EN%')
+							ORDER BY lv.`CODE` ASC
+							LIMIT 0, @prm_Offset
+							"*/
+				"SQL"	 => "SELECT lv.`CODE`, lv.`CONTENT_RO`, lv.`CONTENT_EN`
+							FROM `lists` l
+							LEFT JOIN `lists_values` lv ON (l.`ID` = lv.`ID_LIST`)
+							WHERE (l.`NAME` = '@prm_CPVType') AND (@prm_LIKE)
+							ORDER BY lv.`CODE` ASC
+							LIMIT 0, @prm_Offset
+							"
+			)
+		),
+
+		"UNICITY"=>array(
+			"0"=>array(
+				"ID"	 => "select_UniqueNumber",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT *
+ 							 FROM `unicity` u
+							 LEFT JOIN `unique_items` ui ON u.`ID_UNIQUE_ITEM` = ui.`ID`
+							 WHERE (ui.`NAME` = '@prm_UNIQUE_ITEM') AND ((u.`DATE` = '@prm_DATE') OR (@prm_DATE = -1))
+							 ORDER BY u.`VALUE` DESC
+							 LIMIT 1"
+			),
+			"1"=>array(
+				"ID"	 => "insert_UniqueNumber",
+				"SQLType"=> "2",
+				"SQL"	 => "INSERT INTO `unicity` (`ID_UNIQUE_ITEM`, `DATE`, `VALUE`, `IS_CANCELED`) VALUES ('@prm_ID', DATE(NOW()), '@prm_VALUE', false)"
+			)
+		),
+
+		"UNIQUE_ITEMS"=>array(
+			"0"=>array(
+				"ID"	 => "select_ItemIDByName",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT `ID` FROM `unique_items` ui WHERE ui.`NAME` = '@prm_UNIQUE_ITEM'"
+			)
+		),
+
+		"ZXF"=>array(
+			"0"=>array(
+				"ID"	 => "insert_ZXF",
+				"SQLType"=> "2",
+				"SQL"	 => "INSERT INTO `zxf` (`ID_ZIP`, `ID_XML`, `ZIP_PATH`, `XML_PATH`, `DATETIME`) VALUES ('@prm_ID_ZIP', '@prm_ID_XML', '@prm_ZIP_PATH', '@prm_XML_PATH', '@prm_DATETIME')"
+			)
+		),
+
+		"STREETS"=>array(
+			"0"=>array(
+				"ID"	 => "select_StreetByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_streets` str WHERE str.`ID` = '@prm_ID'"
+			)
+		),
+
+		"CITIES"=>array(
+			"0"=>array(
+				"ID"	 => "select_CityByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_cities` ci WHERE ci.`ID` = '@prm_ID'"
+			)
+		),
+
+		"COUNTIES"=>array(
+			"0"=>array(
+				"ID"	 => "select_CountyByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_counties` co WHERE co.`ID` = '@prm_ID'"
+			)
+		),
+
+		"OFFICIALNAMES"=>array(
+			"0"=>array(
+				"ID"	 => "select_OfficialNameByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_officialnames` WHERE `ID` = '@prm_ID'"
+			)
+		),
+
+		"FIRST_NAME"=>array(
+			"0"=>array(
+				"ID"	 => "select_FirstNameByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_firstname` WHERE `ID` = '@prm_ID'"
+			)
+		),
+
+		"LAST_NAME"=>array(
+			"0"=>array(
+				"ID"	 => "select_LastNameByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_lastname` WHERE `ID` = '@prm_ID'"
+			)
+		),
+
+		"CONTRACTS"=>array(
+			"0"=>array(
+				"ID"	 => "select_ContractByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_contracts` co LEFT JOIN `data_contracts_description` de ON (co.`ID` = de.`ID_CONTRACT`) WHERE co.`ID` = '@prm_ID'"
+			)
+		),
+
+		"DEPOSITS"=>array(
+			"0"=>array(
+				"ID"	 => "select_DepositByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_deposits` WHERE `ID` = '@prm_ID'"
+			)
+		),
+
+		"AWARDS"=>array(
+			"0"=>array(
+				"ID"	 => "select_AwardByID",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT * FROM `data_award` WHERE `ID` = '@prm_ID'"
+			)
+		),
+		"SAVEDB"=>array(
+			"0"=>array(
+				"ID"	 => "exec_Test",
+				"SQLType"=> "2",
+				"SQL"	 => "insert into Test(Nume) values('@prm')"
+			),
+			"1"=>array(
+				"ID"	 => "exec_InsertFormData",
+				"SQLType"=> "2",
+				"SQL"	 => "insert into `saved_forms_detail`(`ID_Header`,
+								`ID_Ctl`,
+								`Val_Ctl`, `Excel_Ctl_ID`)
+							values(@prm_ID_Header,
+								concat(replace(SUBSTRING_INDEX('@prm_ID_Ctl', '#', 2), '_', '.'),
+									'#', SUBSTRING_INDEX('@prm_ID_Ctl', '#', -2)),
+								'@prm_Val_Ctl', '@prm_Excel_Ctl_ID')"
+			),
+			"2"=>array(
+				"ID"	 => "exec_InsertFormHeader",
+				"SQLType"=> "2",
+				"SQL"	 => "insert into `saved_forms_header`(`ID_Form`, `ID_User`,
+								`Form_Name`, `Form_Desc`, `XML_Path`, `ID_Language`)
+							values('@prm_ID_Form', @prm_ID_User, '@prm_Form_Name',
+								'@prm_Form_Desc', '@prm_XML_Path', @prm_ID_Language)"
+			),
+			"3"=>array(
+				"ID"	 => "GetID",
+				"SQLType"=> "1",
+				"SQL"	 => "select LAST_INSERT_ID() as ID"
+			),
+			"4"=>array(
+				"ID"	 => "GetFormID",
+				"SQLType"=> "1",
+				"SQL"	 => "select ID, Name, Description from forms where Code = '@prm_Name'"
+			),
+			"5"=>array(
+				"ID"	 => "GetFormsList",
+				"SQLType"=> "1",
+				"SQL"	 => "select -1 as ID, ' Orice form' as Name, ' Orice form' as Description union
+							(select f.ID, CONCAT (fn.`RO`, '(', f.Name, ')') as Name, f.Description
+							from forms f
+							left join `form_names` fn on f.`CODE` = fn.`CODE`
+							order by f.`Name`
+							)
+							"
+			),
+			"6"=>array(
+				"ID"	 => "select_HistorySaves",
+				"SQLType"=> "1",
+				"SQL"	 => "select s.ID, f.Name, fn.RO, s.Form_Date, f.Description, s.ID_Language, l.Code as Language, s.ID_Header1, l1.Code as Language1, s1.ID_Language as ID_Language1, s.JOUEReady, s.JOUE_NO_DOC_EXT
+							from saved_forms_header s
+							left join forms f on f.ID = s.ID_Form
+							left join languages l on l.ID = s.ID_language
+							left join saved_forms_header s1 on s1.ID = s.ID_Header1
+							left join languages l1 on l1.ID = s1.ID_language
+							left join form_names fn on f.CODE = fn.CODE
+							left join jml_users u on s.`ID_User` = u.`id`
+							where s.ID_Parent is null and ((@prm_ID_Form = -1) or (s.ID_Form = @prm_ID_Form)) and ((@prm_ID_User = u.`id`) OR (@prm_ID_User = -1)) and s.Form_Date between '@prm_DateFrom' and '@prm_DateTo'
+								and ((s.ID = '@prm_NumarIntern') or ('@prm_NumarIntern' = ''))
+								and ((s.ID = '@prm_NumarJoue') or ('@prm_NumarJoue' = ''))
+							order by s.ID desc"
+			),
+			"7"=>array(
+				"ID"	 => "select_Save",
+				"SQLType"=> "1",
+				"SQL"	 => "select SUBSTRING_INDEX(substring(s.ID_Ctl, Locate('#', SUBSTRING_INDEX(s.ID_Ctl, '#', 2)) + 1, 10), '#', 1) as ID_Ctl,
+						s.ID_Ctl as IDCtlOriginal, s.Val_Ctl, s.Excel_Ctl_ID
+					from saved_forms_detail s
+					where s.ID_Header = @prm_ID_Header
+					order by s.ID"
+			),
+			"8"=>array(
+				"ID"	 => "exec_UpdFormHeader",
+				"SQLType"=> "2",
+				"SQL"	 => "update saved_forms_header
+							set Form_Date = SYSDATE()
+							where ID = @prm_ID_Save"
+			),
+			"9"=>array(
+				"ID"	 => "exec_DelFormData",
+				"SQLType"=> "2",
+				"SQL"	 => "delete from saved_forms_detail where ID_Header = @prm_ID_Header"
+			),
+			"10"=>array(
+				"ID"	 => "copy_Save_Add",
+				"SQLType"=> "1",
+				"SQL"	 => "insert into saved_forms_header(ID_Form, ID_User,
+						Form_Name, Form_Date, Form_Desc, XML_Path,
+						ID_language,
+						ID_Parent, ID_Header1)
+					select ID_Form, ID_User,
+						Form_Name, SYSDATE(), Form_desc, XML_Path,
+						case ID_Language when 1 then 2 when 2 then 1 end,
+						ID, null
+					from saved_forms_header
+					where ID = @prm_ID_Header"
+			),
+			"11"=>array(
+				"ID"	 => "copy_Save_LastID",
+				"SQLType"=> "2",
+				"SQL"	 => "select LAST_INSERT_ID() as ID"
+			),
+			"12"=>array(
+				"ID"	 => "copy_Save_Update",
+				"SQLType"=> "1",
+				"SQL"	 => "update saved_forms_header
+					set ID_Header1 = @prm_ID_New
+					where ID = @prm_ID_Header"
+			),
+			"13"=>array(
+				"ID"	 => "copy_Save_GetInfo",
+				"SQLType"=> "2",
+				"SQL"	 => "select f.SitePath, s.*,
+						case s1.ID_Language when 1 then 'RO' when 2 then 'EN' end as LanguageFrom,
+						case s.ID_Language when 1 then 'RO' when 2 then 'EN' end as LanguageTo
+					from saved_forms_header s
+						left join forms f on f.ID = s.ID_Form
+						left join saved_forms_header s1 on s1.ID_Header1 = s.ID
+					where s.ID = @prm_ID_New"
+			),
+			"14"=>array(
+				"ID"	 => "copy_Save_Details",
+				"SQLType"=> "1",
+				"SQL"	 => "insert into saved_forms_detail(ID_Header,
+						ID_Ctl,
+						Val_Ctl, Excel_Ctl_ID)
+					select @prm_ID_New,
+						case when substring(s.ID_Ctl, length(s.ID_Ctl) - 3) = '#' + '@prm_LanguageFrom'
+							then concat(left(s.ID_Ctl, length(s.ID_Ctl) - 2), '@prm_LanguageTo') else s.ID_Ctl end,
+						s.Val_Ctl, s.Excel_Ctl_ID
+					from saved_forms_detail s
+					where s.ID_Header = @prm_ID_Header"
+			),
+
+			"15"=>array(
+				"ID"	 => "select_childHeader",
+				"SQLType"=> "1",
+				"SQL"	 => "select SUBSTRING_INDEX(substring(s.ID_Ctl, Locate('#', SUBSTRING_INDEX(s.ID_Ctl, '#', 2)) + 1, 10), '#', 1) as ID_Ctl,
+							s.ID_Ctl as IDCtlOriginal, s.Val_Ctl, s.Excel_Ctl_ID
+							from saved_forms_detail s
+							left join saved_forms_header sfh ON (sfh.`ID_Header1` = s.`ID_Header`)
+							where sfh.ID = @prm_ID_Header
+							order by s.ID"
+			)
+		),
+
+		"PACKSEND"=>array(
+			"0"=>array(
+				"ID"	 => "update_JOUESent",
+				"SQLType"=> "3",
+				"SQL"	 => "UPDATE `saved_forms_header` SET `JOUESent` = 1 WHERE `ID` = '@prm_ID'"
+			),
+
+			"1"=>array(
+				"ID"	 => "update_JOUEReady",
+				"SQLType"=> "3",
+				"SQL"	 => "UPDATE `saved_forms_header` SET `JOUEReady` = 1 WHERE `ID` = '@prm_ID'"
+			),
+
+			"2"=>array(
+				"ID"	 => "select_childHeader",
+				"SQLType"=> "1",
+				"SQL"	 => "SELECT sfh.`ID`, CONCAT (fn.`RO`, ' (', fn.`CODE`, ')') AS `FormName`, u.`username` AS `Username`, l.`Code` AS `Language`,
+							CASE WHEN (`ID_Header1` IS NULL) THEN 'NU' ELSE 'DA' END AS `Child`
+							FROM `saved_forms_header` sfh
+							LEFT JOIN `forms` f ON (sfh.`ID_Form` = f.`ID`)
+							LEFT JOIN `form_names` fn ON (f.`CODE` = fn.`CODE`)
+							LEFT JOIN `jml_users` u ON (sfh.`ID_User` = u.`id`)
+							LEFT JOIN `languages` l ON (sfh.`ID_Language` = l.`ID`)
+							WHERE (`JOUEReady` = @prm_READY) AND (`JOUESent` = 0)"
+			),
+
+			"3"=>array(
+				"ID"	 => "update_JOUESent",
+				"SQLType"=> "3",
+				"SQL"	 => "UPDATE `saved_forms_header` SET `JOUESent` = 1 WHERE `ID` = '@prm_ID'"
+			),
+
+			"4"=>array(
+				"ID"	 => "update_JOUENODOCEXT",
+				"SQLType"=> "3",
+				"SQL"	 => "UPDATE `saved_forms_header` SET `JOUE_NO_DOC_EXT` = '@prm_NO_DOC_EXT_VALUE' WHERE `ID` = '@prm_ID'"
+			),
+
+		)
+	);
+
+?>

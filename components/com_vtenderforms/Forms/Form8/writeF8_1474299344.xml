@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://publications.europa.eu/TED_schema/Reception" xsi:noNamespaceSchemaLocation="TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2016-091915</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <BUYER_PROFILE>
+      <FD_BUYER_PROFILE>
+        <NOTICE_RELATION_PUBLICATION NOTICE="Prior Information Notice (covered by Directive 200"/>
+      </FD_BUYER_PROFILE>
+    </BUYER_PROFILE>
+  </FORM_SECTION>
+</TED_ESENDERS>

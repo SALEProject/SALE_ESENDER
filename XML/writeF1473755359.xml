@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://publications.europa.eu/TED_schema/Reception" xsi:noNamespaceSchemaLocation="TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2016-091311</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <PRIOR_INFORMATION CATEGORY="ORIGINAL" FORM="1" LG="RO" VERSION="R2.0.8.S02">
+      <FD_PRIOR_INFORMATION CTYPE="">
+        <AUTHORITY_PRIOR_INFORMATION>
+          <NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>LocationTest1</OFFICIALNAME>
+                <NATIONAL_ID>LocationTest1</NATIONAL_ID>
+              </ORGANISATION>
+              <ADDRESS>LocationTest1</ADDRESS>
+              <TOWN>LocationTest1</TOWN>
+              <COUNTRY VALUE="FI"/>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+          </NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+        </AUTHORITY_PRIOR_INFORMATION>
+        <OTH_INFO_PRIOR_INFORMATION>
+          <NOTICE_DISPATCH_DATE>
+            <DAY>12</DAY>
+            <MONTH>9</MONTH>
+            <YEAR>2016</YEAR>
+          </NOTICE_DISPATCH_DATE>
+        </OTH_INFO_PRIOR_INFORMATION>
+      </FD_PRIOR_INFORMATION>
+    </PRIOR_INFORMATION>
+  </FORM_SECTION>
+</TED_ESENDERS>

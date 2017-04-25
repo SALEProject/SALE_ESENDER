@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/TED_schema/Reception/R2.0.8.S02/TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2013-031111</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <PRIOR_INFORMATION_DEFENCE CATEGORY="ORIGINAL" FORM="16" LG="EN" VERSION="R2.0.8.S02">
+      <FD_PRIOR_INFORMATION_DEFENCE CTYPE="SUPPLIES">
+        <AUTHORITY_PRIOR_INFORMATION_DEFENCE>
+          <NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>MATRAS S.A.</OFFICIALNAME>
+                <NATIONALID>313176900</NATIONALID>
+              </ORGANISATION>
+              <ADDRESS>Blv. A.I.Cuza 328-329, 77996, Jibou</ADDRESS>
+              <TOWN>Jibou</TOWN>
+              <POSTAL_CODE>73508</POSTAL_CODE>
+              <COUNTRY VALUE="RO"/>
+              <ATTENTION>Barbu Chedves</ATTENTION>
+              <PHONE>+40 743175129</PHONE>
+              <E_MAILS>
+                <E_MAIL>barbu@matras.com</E_MAIL>
+              </E_MAILS>
+              <FAX>+40 39417649</FAX>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+            <INTERNET_ADDRESSES_PRIOR_INFORMATION>
+              <URL_GENERAL>www.matras.com</URL_GENERAL>
+              <URL_BUYER>www.matras.ro</URL_BUYER>
+            </INTERNET_ADDRESSES_PRIOR_INFORMATION>
+            <FURTHER_INFORMATION>
+              <IDEM></IDEM>
+            </FURTHER_INFORMATION>
+          </NAME_ADDRESSES_CONTACT_PRIOR_INFORMATION>
+          <TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+            <TYPE_AND_ACTIVITIES>
+              <TYPE_OF_ACTIVITY VALUE="ENVIRONMENT"/>
+            </TYPE_AND_ACTIVITIES>
+            <PURCHASING_ON_BEHALF>
+              <PURCHASING_ON_BEHALF_NO></PURCHASING_ON_BEHALF_NO>
+            </PURCHASING_ON_BEHALF>
+          </TYPE_AND_ACTIVITIES_OR_CONTRACTING_ENTITY_AND_PURCHASING_ON_BEHALF>
+        </AUTHORITY_PRIOR_INFORMATION_DEFENCE>
+        <OBJECT_WORKS_SUPPLIES_SERVICES_PRIOR_INFORMATION>
+          <TITLE_CONTRACT>HILUMI LHC - FP7 High Luminosity Large Hadron Collider Design Study</TITLE_CONTRACT>
+          <TYPE_CONTRACT_PLACE_DELIVERY_DEFENCE>
+            <TYPE_CONTRACT_PI_DEFENCE>
+              <TYPE_CONTRACT VALUE="SUPPLIES"/>
+            </TYPE_CONTRACT_PI_DEFENCE>
+            <SITE_OR_LOCATION>
+              <LABEL>SCHWEIZ/SUISSE/SVIZZERA</LABEL>
+              <NUTS CODE="RO22"/>
+            </SITE_OR_LOCATION>
+          </TYPE_CONTRACT_PLACE_DELIVERY_DEFENCE>
+          <FRAMEWORK_AGREEMENT VALUE="NO"/>
+          <QUANTITY_SCOPE_WORKS_DEFENCE>
+            <TOTAL_QUANTITY_OR_SCOPE>The Large Hadron Collider (LHC) is the largest scientific instrument ever built. It has been exploring the new energy frontier since 2009, gathering a global user community of 7,000 scientists. It will remain the most powerful accelerator in the world for at least two decades, and its full exploitation is the highest priority in the European Strategy for Particle Physics, adopted by the CERN Council and integrated into the ESFRI Roadmap. To extend its discovery potential, the LHC will need a major upgrade around 2020 to increase its luminosity (rate of collisions) by a factor of 10 beyond its design value. As a highly complex and optimized machine, such an upgrade of the LHC must be carefully studied and requires about 10 years to implement. The novel machine configuration, called High Luminosity LHC (HL-LHC), will rely on a number of key innovative technologies, representing exceptional technological challenges, such as cutting-edge 13 tesla superconducting magnets, very compact and ultra-precise superconducting cavities for beam rotation, and 300-metre-long high-power superconducting links with zero energy dissipation.</TOTAL_QUANTITY_OR_SCOPE>
+          </QUANTITY_SCOPE_WORKS_DEFENCE>
+          <CPV>
+            <CPV_MAIN>
+              <CPV_CODE CODE="39522200"/>
+              <CPV_SUPPLEMENTARY_CODE CODE="KA08"/>
+            </CPV_MAIN>
+            <CPV_ADDITIONAL>
+              <CPV_CODE CODE="50118300"/>
+              <CPV_SUPPLEMENTARY_CODE CODE="RC06"/>
+            </CPV_ADDITIONAL>
+          </CPV>
+          <ADDITIONAL_INFORMATION>This FP7 Design Study proposal (HiLumi LHC) is part of an overall project that will federate efforts and R&amp;D of a large community towards the ambitious HL-LHC objectives. HiLumi LHC involves participants from outside the European Research Area (ERA), in particular leading US and Japanese laboratories, which will facilitate the implementation of the construction phase as a global project. The proposed governance model is tailored accordingly and may pave the way for the organization of other global research infrastructures.</ADDITIONAL_INFORMATION>
+        </OBJECT_WORKS_SUPPLIES_SERVICES_PRIOR_INFORMATION>
+        <LEFTI_PRIOR_INFORMATION>
+          <MAIN_FINANCING_CONDITIONS>HiLumi LHC will help to foster opportunities for the European industry to bid for contracts worth 300 M in innovative fields during the second half of this decade, and will establish the ERA as a focal point of a global research cooperation and a leader in frontier knowledge and technologies.</MAIN_FINANCING_CONDITIONS>
+        </LEFTI_PRIOR_INFORMATION>
+        <OTH_INFO_PRIOR_INFORMATION>
+          <RELATES_TO_EU_PROJECT_NO></RELATES_TO_EU_PROJECT_NO>
+          <NOTICE_DISPATCH_DATE>
+            <DAY>11</DAY>
+            <MONTH>03</MONTH>
+            <YEAR>2013</YEAR>
+          </NOTICE_DISPATCH_DATE>
+        </OTH_INFO_PRIOR_INFORMATION>
+      </FD_PRIOR_INFORMATION_DEFENCE>
+    </PRIOR_INFORMATION_DEFENCE>
+  </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5">
+    <name>Romanian Language Pack</name>
+    <packagename>ro-RO</packagename>
+    <version>2.5.5.2</version>
+    <creationDate>2012-12-20</creationDate>
+    <author>Romanian translation team: joomla.ro</author>
+    <authorEmail>traducere@joomla.ro</authorEmail>
+    <authorUrl>www.joomla.ro</authorUrl>
+        <copyright>Copyright (C) 2005 - 2012 joomla.ro si Open Source Matters. Toate drepturile rezervate</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <url></url>
+    <packager>Joomla! Romania</packager>
+    <packagerurl>www.joomla.ro</packagerurl>
+    <description>
+        <![CDATA[
+        <h3>Pachet de limba română Joomla! ro-RO versiunea 2.5.5v3</h3>
+        <h3>Joomla! 2.5.5 Full Romanian (ro-RO) Language Package version 2</h3>
+        ]]>
+    </description>
+    <files>
+        <file type="language" client="site" id="ro-RO">site_ro-RO.zip</file>
+        <file type="language" client="administrator" id="ro-RO">admin_ro-RO.zip</file>
+    </files>
+    <updateservers>
+        <server type="collection" priority="1" name="Accredited Joomla! Translations">http://update.joomla.org/language/translationlist.xml</server>
+    </updateservers>
+</extension>

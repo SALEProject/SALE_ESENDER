@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/TED_schema/Reception/R2.0.8.S02/TED_ESENDERS.xd">
+  <SENDER>
+    <LOGIN CLASS="B">
+      <ESENDER_LOGIN>TEDA8</ESENDER_LOGIN>
+    </LOGIN>
+    <USER>
+      <USER_E_MAILS>
+        <USER_E_MAIL TYPE="FUNCTIONAL">brm_ojs@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="TECHNICAL">v.gheorghe@brm.ro</USER_E_MAIL>
+        <USER_E_MAIL TYPE="CONTENT">a.ursache@brm.ro</USER_E_MAIL>
+      </USER_E_MAILS>
+    </USER>
+    <NO_DOC_EXT>2013-000226</NO_DOC_EXT>
+  </SENDER>
+  <FORM_SECTION>
+    <CONTRACT_AWARD CATEGORY="ORIGINAL" FORM="3" LG="RO" VERSION="R2.0.8.S02">
+      <FD_CONTRACT_AWARD CTYPE="WORKS">
+        <CONTRACTING_AUTHORITY_INFORMATION_CONTRACT_AWARD>
+          <NAME_ADDRESSES_CONTACT_CONTRACT_AWARD>
+            <CA_CE_CONCESSIONAIRE_PROFILE>
+              <ORGANISATION>
+                <OFFICIALNAME>SC Romania Broadcast Corporation SRL</OFFICIALNAME>
+              </ORGANISATION>
+              <ADDRESS>General Berthelot Street, 60-64</ADDRESS>
+              <TOWN>Bucuresti</TOWN>
+              <COUNTRY VALUE="RO"/>
+            </CA_CE_CONCESSIONAIRE_PROFILE>
+          </NAME_ADDRESSES_CONTACT_CONTRACT_AWARD>
+        </CONTRACTING_AUTHORITY_INFORMATION_CONTRACT_AWARD>
+        <OBJECT_CONTRACT_INFORMATION_CONTRACT_AWARD_NOTICE>
+          <DESCRIPTION_AWARD_NOTICE_INFORMATION>
+            <TYPE_CONTRACT_LOCATION_W_PUB>
+              <TYPE_CONTRACT VALUE="WORKS"/>
+              <TYPE_WORK_CONTRACT>
+                <EXECUTION/>
+              </TYPE_WORK_CONTRACT>
+            </TYPE_CONTRACT_LOCATION_W_PUB>
+            <SHORT_CONTRACT_DESCRIPTION>Achizitionarea de echipamente radio.</SHORT_CONTRACT_DESCRIPTION>
+            <CPV>
+              <CPV_MAIN>
+                <CPV_CODE CODE="32000000"/>
+              </CPV_MAIN>
+            </CPV>
+          </DESCRIPTION_AWARD_NOTICE_INFORMATION>
+        </OBJECT_CONTRACT_INFORMATION_CONTRACT_AWARD_NOTICE>
+        <PROCEDURE_DEFINITION_CONTRACT_AWARD_NOTICE>
+          <TYPE_OF_PROCEDURE_DEF>
+            <PT_OPEN/>
+          </TYPE_OF_PROCEDURE_DEF>
+        </PROCEDURE_DEFINITION_CONTRACT_AWARD_NOTICE>
+        <AWARD_OF_CONTRACT>
+          <CONTRACT_NUMBER>2013/505</CONTRACT_NUMBER>
+        </AWARD_OF_CONTRACT>
+        <COMPLEMENTARY_INFORMATION_CONTRACT_AWARD>
+          <RELATES_TO_EU_PROJECT_NO/>
+          <NOTICE_DISPATCH_DATE>
+            <DAY>14</DAY>
+            <MONTH>05</MONTH>
+            <YEAR>2013</YEAR>
+          </NOTICE_DISPATCH_DATE>
+        </COMPLEMENTARY_INFORMATION_CONTRACT_AWARD>
+      </FD_CONTRACT_AWARD>
+    </CONTRACT_AWARD>
+  </FORM_SECTION>
+</TED_ESENDERS>

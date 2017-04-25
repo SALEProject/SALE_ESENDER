@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile version="2.5" client="administrator" method="upgrade">
+	<tag>ro-RO</tag>
+	<name>Romanian (Romania)</name>
+	<description>Romanian (partial) administrator language pack for Joomla! 2.5</description>
+	<version>2.5.5.2</version>
+	<creationDate>2012-12-20</creationDate>
+	<author>Joomla! Romania</author>
+	<authorEmail>traducere@joomla.ro</authorEmail>
+	<authorUrl>www.joomla.ro</authorUrl>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters &amp;  Joomla.ro. All rights reserved.</copyright>
+	<copyright></copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<metadata>
+		<name>Română (România)</name>
+		<tag>ro-RO</tag>
+		<rtl>0</rtl>
+		<locale>ro_RO.UTF-8, ro_RO.utf8, ro_RO, ro, RO, ro_RO.ISO8859-2, ro_RO.iso88592, ro_RO.ISO8859-16, Romanian, Romania</locale>
+		<firstDay>1</firstDay>
+	</metadata>
+	<params />
+</metafile>
